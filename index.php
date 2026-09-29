@@ -1,41 +1,37 @@
-<?php
-// Indicamos al cliente que la respuesta siempre será en formato JSON
-header("Content-Type: application/json; charset=UTF-8");
+<!DOCTYPE html>
+<html lang="es">
 
-$metodo = $_SERVER['REQUEST_METHOD'];
+<head>
+    <style>
+        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        <script src="//unpkg.com/alpinejs" defer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-if ($metodo === 'GET') {
-    // Lectura de parámetros enviados por la URL (Query Params)
-    $categoria = $_GET['categoria'] ?? 'todas';
+    <title>Ejemplo Servidor</title>
+</head>
 
-    http_response_code(200);
-    echo json_encode([
-        "status" => "success",
-        "metodo" => "GET",
-        "mensaje" => "Consulta realizada correctamente",
-        "categoria_filtrada" => $categoria
-    ]);
-} elseif ($metodo === 'POST') {
-    // Lectura del cuerpo de la petición enviado en JSON
-    $input = json_decode(file_get_contents('php://input'), true);
+<body>
+    <!-- Bloque o sentencia de guión embebido en PHP -->
+    <?php
+    $color = $_GET["color"];
+    ?>
 
-    // Validación básica de campos obligatorios
-    if (!isset($input['usuario']) || !isset($input['email'])) {
-        http_response_code(400); // Bad Request
-        echo json_encode([
-            "status" => "error",
-            "mensaje" => "Faltan datos obligatorios: 'usuario' y 'email'"
-        ]);
-    } else {
-        http_response_code(201); // Created
-        echo json_encode([
-            "status" => "success",
-            "metodo" => "POST",
-            "mensaje" => "Usuario registrado con éxito",
-            "datos_recibidos" => $input
-        ]);
-    }
-} else {
-    http_response_code(405); // Method Not Allowed
-    echo json_encode(["status" => "error", "mensaje" => "Método no soportado"]);
-}
+    <h1 style="color: <?php echo $color; ?>;">
+        <?php
+        $usuario = $_GET["usuario"];
+        echo "Bienvenido a la web, " . $usuario;
+        ?>
+    </h1>
+
+    <div x-data="{ open: false }">
+        <button class="button is-warning" @click="open = true">Expand</button>
+
+        <span x-show="open">
+            Content...
+        </span>
+    </div>
+</body>
+
+</html>

@@ -7,3 +7,5 @@ Proyecto web desarrollado con PHP y MySQL como práctica de la asignatura, sigui
 ## Diario de modificaciones
 
 - **21/09/2026** — Creación de la estructura inicial del proyecto (carpetas `assets/`, `includes/`, `uploads/`, `index.php`).
+- **29/09/2026** - He implementado las siguientes librerias css Herramientas: Bulma css / Font awesome, tambien añadi las siguientes librerias : Alpine JS / Axios JS
+
