@@ -5,8 +5,8 @@
     <style>
         @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        <script src="//unpkg.com/alpinejs" defer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <title>Ejemplo Servidor</title>
@@ -15,12 +15,12 @@
 <body>
     <!-- Bloque o sentencia de guión embebido en PHP -->
     <?php
-    $color = $_GET["color"];
+    $color = htmlspecialchars($_GET["color"] ?? "black");
     ?>
 
     <h1 style="color: <?php echo $color; ?>;">
         <?php
-        $usuario = $_GET["usuario"];
+        $usuario = htmlspecialchars($_GET["usuario"] ?? "visitante");
         echo "Bienvenido a la web, " . $usuario;
         ?>
     </h1>
