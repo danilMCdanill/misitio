@@ -46,7 +46,7 @@
         <input
             class="input is-link"
             type="text"
-            placeholder="SIUUUU" />
+            placeholder="ApruebameJoaquinPorDios" />
         <input type="submit" class="submit" value="ENVIAR" />
     </form>
 
