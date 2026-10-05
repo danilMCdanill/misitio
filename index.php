@@ -21,8 +21,8 @@
 
     <h1 style="color: <?php echo $color; ?>;">
         <?php
-        $usuario = $_GET["usuario"] ?? "Invitado"; // http://misitio.test/index.php?color=green&usuario=JoseAntonio
-        echo "Bienvenido a la web, " . $usuario;
+        $usuario = $_POST["usuario"] ?? $_GET["usuario"] ?? "Invitado"; // http://misitio.test/index.php?color=green&usuario=JoseAntonio
+        echo "Bienvenido a la web, " . htmlspecialchars($usuario);
         ?>
     </h1>
 
@@ -46,6 +46,7 @@
         <input
             class="input is-link"
             type="text"
+            name="usuario"
             placeholder="ApruebameJoaquinPorDios" />
         <input type="submit" class="submit" value="ENVIAR" />
     </form>
