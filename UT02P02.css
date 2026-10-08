@@ -1,0 +1,187 @@
+/* ==========================================================
+   UT02P02 · Cálculo de salario
+   ========================================================== */
+
+:root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #d9dee8;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-soft: rgba(79, 70, 229, 0.15);
+    --radius: 12px;
+    --shadow: 0 10px 30px rgba(31, 41, 55, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0f172a;
+        --card: #1e293b;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --border: #334155;
+        --primary: #818cf8;
+        --primary-hover: #a5b4fc;
+        --primary-soft: rgba(129, 140, 248, 0.2);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 48px 16px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tarjeta: el formulario y los resultados comparten ancho */
+h1 {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 0 20px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1::before {
+    content: "€";
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border-radius: 10px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+form {
+    width: 100%;
+    max-width: 420px;
+    padding: 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Los <br> del HTML se sustituyen por espaciado propio */
+form br {
+    display: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+input[type="number"]:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: #ef4444;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+
+input[type="submit"]:hover {
+    background: var(--primary-hover);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Página de resultado */
+p {
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-bottom: none;
+}
+
+h1 + p {
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+/* Sueldo final destacado */
+p:nth-of-type(3) {
+    border-bottom: 1px solid var(--border);
+    border-radius: 0 0 var(--radius) var(--radius);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    box-shadow: var(--shadow);
+}
+
+/* Párrafo del enlace "Volver" */
+p:last-of-type {
+    margin-top: 20px;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a::before {
+    content: "← ";
+}
+
+a:hover {
+    text-decoration: underline;
+}
