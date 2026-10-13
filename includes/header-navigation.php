@@ -4,19 +4,16 @@
 $tituloPagina = $tituloPagina ?? "Mi Sitio";
 ?>
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= htmlspecialchars($tituloPagina) ?></title>
-
-    <!-- Estilos: Bulma + Font Awesome -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Scripts: Alpine JS + Axios -->
-    <script src="https://unpkg.com/alpinejs" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+    </style>
+    <link rel ="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 

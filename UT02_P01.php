@@ -2,15 +2,19 @@
     enviar cuando el usuario haga clic en enviar aparecera en la pantalla contador: numero que escribio
     y debajo un boton para incrementar +1 -->
 
-<doctype html>
-    <html>
-
-    <head>
-        <title>Contador</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="script.js"></script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+    </style>
+    <link rel ="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
 
     <body>
         <h1>Contador</h1>
