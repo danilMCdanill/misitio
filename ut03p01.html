@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT03 - Práctica 01: Formulario</title>
+    <style>
+        @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+    </style>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="//unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container" style="max-width: 500px;">
+            <h1 class="title has-text-centered">Perfil de Usuario</h1>
+
+            <form class="box" action="ut03p01.php" method="post">
+                <div class="field">
+                    <label class="label" for="nombre">Nombre</label>
+                    <div class="control">
+                        <input class="input" type="text" id="nombre" name="nombre" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="edad">Edad</label>
+                    <div class="control">
+                        <input class="input" type="number" id="edad" name="edad" min="0" max="120" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="rol">Rol</label>
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select id="rol" name="rol" required>
+                                <option value="">-- Elige un rol --</option>
+                                <option value="admin">Administrador</option>
+                                <option value="editor">Editor</option>
+                                <option value="autor">Autor</option>
+                                <option value="otro">Invitado</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary is-fullwidth" type="submit">Generar tarjeta</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
