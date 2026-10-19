@@ -10,6 +10,7 @@ Proyecto web desarrollado con PHP y MySQL como práctica de la asignatura, sigui
 - **29/09/2026** - He implementado las siguientes librerias css Herramientas: Bulma css / Font awesome, tambien añadi las siguientes librerias : Alpine JS / Axios JS
 
 - **05/10/2026** — Cabecera y pie reutilizables en `includes/` (navbar con enlaces a las páginas). `index.php` reorganizado: botones de color generados con un array y bucle, nuevo color naranja, formulario con icono. `practica01.php` (API REST GET/POST) refactorizada con `switch` y función `responder()`. Añadido `.gitignore`.
+- **19/10/2026** — UT03 Práctica 02: calculadora de longevidad (`ut03p02.html` + `ut03p02.php`) con arrays de ajustes, cálculo del IMC y resultado dinámico.
 
 ## Estructura
 
