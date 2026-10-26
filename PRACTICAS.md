@@ -35,6 +35,13 @@ Calculadora de longevidad. En el HTML contestas 5 preguntas (tabaco, actividad f
 - Muestra la estimación, cada hábito con su barra (verde suma, rojo resta, gris no cambia) y cuál es el que más resta.
 - Usa `filter_input`, `match`, `foreach` y la sintaxis alternativa `if: endif;`, todo lo de las prácticas anteriores.
 
+## ut03p03/ (UT03 Práctica 03)
+Buscador de productos con filtros. Todo está dentro de la carpeta `ut03p03/`.
+- `datos.php`: el array `$productos` (nombre, categoría, precio y stock) y `$categorias`, que saca las categorías sin repetir y ordenadas. Por ahora los datos están en un array porque todavía no hay base de datos.
+- `ut03p03.php`: el formulario (método GET). Hace `include` de `datos.php` y rellena el desplegable de categorías con un `foreach`. Tiene también precio mínimo, precio máximo y un checkbox de solo stock.
+- `ut03p03res.php`: hace `include` de `datos.php`, recoge los filtros con `filter_input` (INPUT_GET) y recorre `$productos` con un `foreach`, saltando con `continue` los que no cumplen. Enseña los filtros aplicados, una tabla con los resultados y el total. Si no hay ninguno, un aviso amarillo. Precios con `number_format`.
+- `ut03p03.html` y `ut03p03b.php`: lo que venía de ejemplo. El archivo A de ejemplo es ahora `ut03p03res.php` (renombrado y modificado para que use los datos), y de B solo salió el aviso de que no se encontraron productos.
+
 ## includes/
 Cosas que se reutilizan en las páginas:
 - `header-navigation.php`: el `<head>` con las librerías y la barra de navegación.
